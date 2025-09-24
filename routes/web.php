@@ -6,4 +6,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', \App\Http\Controllers\AdminController::class)->name('admin.index');
+Route::get('/', \App\Http\Controllers\Main\IndexController::class)->name('main.index');
