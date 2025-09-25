@@ -87,7 +87,7 @@
                             @foreach($colors as $color)
                                 <option value="{{ $color->id }}"
                                     {{ in_array($color->id, old('colors', $product->colors->pluck('id')->toArray())) ? 'selected' : '' }}>
-                                    {{ $color->title }}
+                                    #{{ $color->title }}
                                 </option>
                             @endforeach
                         </select>

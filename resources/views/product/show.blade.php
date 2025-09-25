@@ -88,7 +88,9 @@
                                         <td>Цвета</td>
                                         <td>
                                             @foreach($product->colors as $color)
-                                                <div>{{ $color->title }}</div>
+                                                <div style="width: 16px; height: 16px;
+                                                background: {{ '#' . $color->title }};"
+                                                class="mb-2"></div>
                                             @endforeach
                                         </td>
                                     </tr>
