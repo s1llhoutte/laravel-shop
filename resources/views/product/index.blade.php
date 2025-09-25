@@ -35,6 +35,14 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Наименование</th>
+                                    <th>Описание</th>
+                                    <th>Контент</th>
+                                    <th>Картинка-превью</th>
+                                    <th>Цена</th>
+                                    <th>Количество на складе</th>
+                                    <th>Категория</th>
+                                    <th>Тэги</th>
+                                    <th>Цвета</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -45,6 +53,27 @@
                                             <a href="{{ route('product.show', $product->id) }}">
                                               {{ $product->title }}
                                             </a>
+                                        </td>
+                                        <td>{{ $product->description }}</td>
+                                        <td>{{ $product->content }}</td>
+                                        <td>
+                                            <div style="width: 100px; height: 100px;
+                                                background: url('{{ asset('storage/' . $product->preview_image) }}'); background-size: cover; background-position: center center;
+                                                ">
+                                            </div>
+                                        </td>
+                                        <td>{{ $product->price }}</td>
+                                        <td>{{ $product->count }}</td>
+                                        <td>{{ $product->category->title }}</td>
+                                        <td>
+                                            @foreach($product->tags as $tag)
+                                                <div>{{ $tag->title }}</div>
+                                            @endforeach
+                                        </td>
+                                        <td>
+                                            @foreach($product->colors as $color)
+                                                <div>{{ $color->title }}</div>
+                                            @endforeach
                                         </td>
                                     </tr>
                                 @endforeach
